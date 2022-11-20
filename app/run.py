@@ -54,8 +54,7 @@ def index():
             "data": [
               {
                 "type": "pie",
-                "uid": "f4de1f",
-                "hole": 0.5,
+                "hole": 0,
                 "name": "Genre",
                 "pull": 0,
                 "domain": {
@@ -69,10 +68,11 @@ def index():
                     "#ED8545"
                    ]
                 },
-                "textinfo": "label+value",
-                "hoverinfo": "all",
+                "textinfo": "all",
+                "hoverinfo": "label+value",
                 "labels": gen_all,
-                "values": gen_count
+                "values": gen_count,
+                "showlegend": "false"
               }
             ],
             "layout": {
