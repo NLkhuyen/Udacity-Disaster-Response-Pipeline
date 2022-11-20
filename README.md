@@ -6,6 +6,7 @@
 	1. [Dependencies](#dependencies)
 	2. [File Descriptions](#fileDescriptions)
 	3. [Instructions](#instructions)
+	3. [Github Repo](#githubRepo)
 
 <a name="projectDescription"></a>
 ## Project Description
