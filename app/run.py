@@ -41,27 +41,63 @@ def index():
     
     # extract data needed for visuals
     # TODO: Below is an example - modify to extract data for your own visuals
-    genre_counts = df.groupby('genre').count()['message']
-    genre_names = list(genre_counts.index)
+    category_names = df.iloc[:,4:].columns
+    category_boolean = (df.iloc[:,4:] != 0).sum()
+    gen_count = df.groupby('genre').count()['message']
+    gen_per = round(100*gen_count/gen_count.sum(), 2)
+    gen_all = list(gen_count.index)
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
+            "data": [
+              {
+                "type": "pie",
+                "uid": "f4de1f",
+                "hole": 0.5,
+                "name": "Genre",
+                "pull": 0,
+                "domain": {
+                  "x": gen_per,
+                  "y": gen_all
+                },
+                "marker": {
+                  "colors": [
+                    "#39FF14",
+                    "#70049F",
+                    "#ED8545"
+                   ]
+                },
+                "textinfo": "label+value",
+                "hoverinfo": "all",
+                "labels": gen_all,
+                "values": gen_count
+              }
+            ],
+            "layout": {
+              "title": "Distribution of Messages by Genre"
+            }
+        },
+        {
             'data': [
-                Bar(
-                    x=genre_names,
-                    y=genre_counts
-                )
+                {
+                "type": "bar",
+                "x": category_names,
+                "y": category_boolean,
+                "marker": {
+                  "color": '#032D83'}
+                }
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Distribution of Message by Categories',
                 'yaxis': {
                     'title': "Count"
                 },
                 'xaxis': {
-                    'title': "Genre"
+                    'title': "Category",
+                    'tickangle': 35
                 }
             }
         }
