@@ -29,10 +29,9 @@ Our project will include a web app where an emergency worker can input a new mes
 <a name="fileDescriptions"></a>
 ### File Descriptions
 1. App folder including the templates folder and "run.py" for the web application
-2. Data folder containing "DisasterResponse.db", "disaster_categories.csv", "disaster_messages.csv" and "process_data.py" for data cleaning and transfering.
+2. Data folder containing "Etl_Disastor.db", "disaster_categories.csv", "disaster_messages.csv" and "process_data.py" for data cleaning and transfering.
 3. Models folder including "classifier.pkl" and "train_classifier.py" for the Machine Learning model.
 4. README file
-5. Preparation folder containing 6 different files, which were used for the project building. (Please note: this folder is not necessary for this project to run.)
 
 <a name="instructions"></a>
 ### Instructions:
